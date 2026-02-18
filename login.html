@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Din's Library</title>
+  <link rel="stylesheet" href="style.css"> <!-- Bisa pakai style.css yang sama -->
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+  </nav>
+
+  <!-- Login Form -->
+  <div id="login-container" style="margin-top:120px; width: 320px; padding: 25px; background-color:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); margin-left:auto; margin-right:auto;">
+    <h2 style="text-align:center;">Login</h2>
+    <form id="login-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Masukkan username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+
+      <button type="submit" style="width:100%; padding:10px; margin-top:15px; background-color:#2c3e50; color:white; border:none; border-radius:5px; cursor:pointer;">Login</button>
+    </form>
+    <p id="login-message" style="text-align:center; margin-top:10px; color:red;"></p>
+  </div>
+
+  <footer style="text-align:center; padding:20px; background-color:#2c3e50; color:white; margin-top:50px;">
+    <p>© 2026 Din's Library</p>
+  </footer>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if(username === 'admin' && password === '1234'){
+        document.getElementById('login-message').style.color = 'green';
+        document.getElementById('login-message').textContent = 'Login berhasil!';
+      } else {
+        document.getElementById('login-message').style.color = 'red';
+        document.getElementById('login-message').textContent = 'Username atau password salah!';
+      }
+    });
+  </script>
+
+</body>
+</html>
