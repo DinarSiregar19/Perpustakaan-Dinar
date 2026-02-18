@@ -23,6 +23,81 @@
             text-align: center;
         }
 
+        /* ===== Navbar ===== */
+    nav {
+      width: 100%;
+      background-color: #0366d6;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-end; /* kanan atas */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffdd57;
+    }
+
+    /* ===== Login Form ===== */
+    #login-container {
+      width: 320px;
+      margin: 50px auto;
+      padding: 25px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    #login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #login-container label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    #login-container input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #login-container button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0366d6;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #login-container button:hover {
+      background-color: #024ea2;
+    }
+
+    #login-message {
+      text-align: center;
+      margin-top: 10px;
+      color: red;
+    }
         .container {
             padding: 35px;
             max-width: 600px;
@@ -136,6 +211,7 @@
 
 </body>
 </html>
+
 
 
 
