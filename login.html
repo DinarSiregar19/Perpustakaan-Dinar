@@ -301,71 +301,79 @@ textarea {
 
 <script>
 
-function showSignup() {
-  document.getElementById("login-box").style.display = "none";
-  document.getElementById("signup-box").style.display = "block";
-}
+/* TAB SWITCH */
+const loginTab = document.getElementById("loginTab");
+const signupTab = document.getElementById("signupTab");
+const loginForm = document.getElementById("loginForm");
+const signupBox = document.getElementById("signup-box");
 
-function showLogin() {
-  document.getElementById("signup-box").style.display = "none";
-  document.getElementById("login-box").style.display = "block";
-}
+loginTab.addEventListener("click", () => {
+    loginTab.classList.add("active");
+    signupTab.classList.remove("active");
+    loginForm.classList.add("active");
+    signupBox.style.display = "none";
+});
+
+signupTab.addEventListener("click", () => {
+    signupTab.classList.add("active");
+    loginTab.classList.remove("active");
+    loginForm.classList.remove("active");
+    signupBox.style.display = "block";
+});
 
 /* LOGIN */
-document.getElementById('login-form').addEventListener('submit', function(e){
-  e.preventDefault();
+loginForm.addEventListener("submit", function(e){
+    e.preventDefault();
 
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
+    const username = loginForm.querySelector("input[type='text']").value;
+    const password = document.getElementById("loginPassword").value;
 
-  if(username === "admin" && password === "1234"){
-    alert("Login berhasil!");
-  } else {
-    alert("Username atau password salah!");
-  }
+    if(username === "admin" && password === "1234"){
+        alert("Login berhasil!");
+    } else {
+        alert("Username atau password salah!");
+    }
 });
 
 /* SIGN UP */
-document.getElementById('signup-form').addEventListener('submit', function(e){
-  e.preventDefault();
+document.getElementById("signup-form").addEventListener("submit", function(e){
+    e.preventDefault();
 
-  const firstName = document.getElementById('first-name').value;
-  const lastName = document.getElementById('last-name').value;
-  const email = document.getElementById('signup-email').value;
-  const phone = document.getElementById('phone').value;
-  const gender = document.getElementById('gender').value;
-  const birthdate = document.getElementById('birthdate').value;
-  const password = document.getElementById('signup-password').value;
-  const confirmPassword = document.getElementById('confirm-password').value;
+    const birthdate = document.getElementById("birthdate").value;
+    const password = document.getElementById("signup-password").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
+    const message = document.getElementById("signup-message");
 
-  const message = document.getElementById('signup-message');
+    if(password !== confirmPassword){
+        message.style.color = "red";
+        message.textContent = "Password tidak sama!";
+        return;
+    }
 
-  if(password !== confirmPassword){
-    message.style.color = "red";
-    message.textContent = "Password tidak sama!";
-    return;
-  }
+    const today = new Date();
+    const birth = new Date(birthdate);
+    let age = today.getFullYear() - birth.getFullYear();
+    const monthDiff = today.getMonth() - birth.getMonth();
 
-  // Validasi umur minimal 18
-  const today = new Date();
-  const birth = new Date(birthdate);
-  let age = today.getFullYear() - birth.getFullYear();
-  const monthDiff = today.getMonth() - birth.getMonth();
+    if(monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())){
+        age--;
+    }
 
-  if(monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())){
-    age--;
-  }
+    if(age < 18){
+        message.style.color = "red";
+        message.textContent = "Umur minimal 18 tahun!";
+        return;
+    }
 
-  if(age < 18){
-    message.style.color = "red";
-    message.textContent = "Umur harus minimal 18 tahun untuk mendaftar!";
-    return;
-  }
-
-  message.style.color = "green";
-  message.textContent = "Pendaftaran berhasil!";
+    message.style.color = "lightgreen";
+    message.textContent = "Pendaftaran berhasil!";
 });
-</script>
 
+function togglePassword(id){
+    const input = document.getElementById(id);
+    input.type = input.type === "password" ? "text" : "password";
+}
+
+</script>
 </body>
 </html>
