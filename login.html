@@ -236,65 +236,135 @@ textarea {
         </form>
 
         <!-- SIGN UP -->
-        <form id="signupForm">
-            <label>Username</label>
-            <input type="text" required>
+        <div class="form-box" id="signup-box" style="display:none;">
+  <h2>Sign Up</h2>
 
-            <label>Password</label>
-            <div class="password-wrapper">
-                <input type="password" id="signupPassword" required>
-                <span class="toggle-password" onclick="togglePassword('signupPassword')">👁</span>
-            </div>
-
-            <label>Email</label>
-            <input type="email" required>
-
-            <label>Nomor HP</label>
-            <input type="tel" required>
-
-            <label>Gender</label>
-            <select required>
-                <option value="">Pilih Gender</option>
-                <option>Laki-laki</option>
-                <option>Perempuan</option>
-            </select>
-
-            <label>Alamat</label>
-            <textarea required></textarea>
-
-            <label>Tanggal Lahir</label>
-            <input type="date" required>
-
-            <button type="submit" class="submit-btn">Sign Up</button>
-        </form>
-
+  <form id="signup-form">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" id="first-name" required>
     </div>
+
+    <div class="form-group">
+      <label>Middle Name</label>
+      <input type="text" id="middle-name">
+    </div>
+
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" id="last-name" required>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="signup-email" required>
+    </div>
+
+    <div class="form-group">
+      <label>No. HP</label>
+      <input type="tel" id="phone" required>
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <select id="gender" required>
+        <option value="">-- Pilih Gender --</option>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Tanggal Lahir</label>
+      <input type="date" id="birthdate" required>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="signup-password" required>
+    </div>
+
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input type="password" id="confirm-password" required>
+    </div>
+
+    <button type="submit" class="btn">Sign Up</button>
+  </form>
+
+  <p id="signup-message"></p>
+
+  <div class="toggle-form">
+    Sudah punya akun? <a onclick="showLogin()">Login di sini</a>
+  </div>
 </div>
 
 <script>
-const loginTab = document.getElementById("loginTab");
-const signupTab = document.getElementById("signupTab");
-const loginForm = document.getElementById("loginForm");
-const signupForm = document.getElementById("signupForm");
 
-loginTab.onclick = () => {
-    loginTab.classList.add("active");
-    signupTab.classList.remove("active");
-    loginForm.classList.add("active");
-    signupForm.classList.remove("active");
-};
-
-signupTab.onclick = () => {
-    signupTab.classList.add("active");
-    loginTab.classList.remove("active");
-    signupForm.classList.add("active");
-    loginForm.classList.remove("active");
-};
-
-function togglePassword(id){
-    const field = document.getElementById(id);
-    field.type = field.type === "password" ? "text" : "password";
+function showSignup() {
+  document.getElementById("login-box").style.display = "none";
+  document.getElementById("signup-box").style.display = "block";
 }
+
+function showLogin() {
+  document.getElementById("signup-box").style.display = "none";
+  document.getElementById("login-box").style.display = "block";
+}
+
+/* LOGIN */
+document.getElementById('login-form').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  if(username === "admin" && password === "1234"){
+    alert("Login berhasil!");
+  } else {
+    alert("Username atau password salah!");
+  }
+});
+
+/* SIGN UP */
+document.getElementById('signup-form').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const firstName = document.getElementById('first-name').value;
+  const lastName = document.getElementById('last-name').value;
+  const email = document.getElementById('signup-email').value;
+  const phone = document.getElementById('phone').value;
+  const gender = document.getElementById('gender').value;
+  const birthdate = document.getElementById('birthdate').value;
+  const password = document.getElementById('signup-password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+
+  const message = document.getElementById('signup-message');
+
+  if(password !== confirmPassword){
+    message.style.color = "red";
+    message.textContent = "Password tidak sama!";
+    return;
+  }
+
+  // Validasi umur minimal 18
+  const today = new Date();
+  const birth = new Date(birthdate);
+  let age = today.getFullYear() - birth.getFullYear();
+  const monthDiff = today.getMonth() - birth.getMonth();
+
+  if(monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())){
+    age--;
+  }
+
+  if(age < 18){
+    message.style.color = "red";
+    message.textContent = "Umur harus minimal 18 tahun untuk mendaftar!";
+    return;
+  }
+
+  message.style.color = "green";
+  message.textContent = "Pendaftaran berhasil!";
+});
 </script>
 
 </body>
