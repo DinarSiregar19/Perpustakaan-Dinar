@@ -1,99 +1,103 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Din's Library</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Din's Library</title>
 
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #f5f5f5;
-            text-align: center;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        /* ===== Navbar ===== */
-    nav {
-      width: 100%;
-      background-color: #2c3e50;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: flex-end; /* kanan atas */
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 100;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-      font-weight: bold;
-    }
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f5f5f5;
+    text-align: center;
+}
 
-    nav a:hover {
-      color: #ffdd57;
-    }
-        
-        .container {
-            padding: 35px;
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-        }
+/* ===== Navbar ===== */
+nav {
+    width: 100%;
+    background-color: #2c3e50;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
 
-        h1 {
-            font-size: 3.2rem;
-            letter-spacing: 5px;
-            margin-bottom: 10px;
-            color: #fefefe;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
 
-        h2 {
-            font-weight: normal;
-            font-size: 1.4rem;
-            margin-bottom: 25px;
-            color: #e0e0e0;
-        }
+nav a:hover {
+    color: #ffdd57;
+}
 
-        .desc {
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 25px;
-            color: #dddddd;
-        }
+/* ===== Hero Section ===== */
+.hero-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+}
 
-        .badge {
-            display: inline-block;
-            padding: 8px 22px;
-            border: 2px solid #f5f5f5;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            color: #f5f5f5;
-        }
+.container {
+    padding: 35px;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
 
-        .menu {
+h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+}
+
+.desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 22px;
+    border: 2px solid #f5f5f5;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+.menu {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 20px;
-        }
+}
 
-        .btn {
+.btn {
     display: inline-block;
     padding: 10px 24px;
     background: #ffffff;
@@ -102,29 +106,22 @@
     border-radius: 30px;
     font-weight: 500;
     transition: 0.3s ease;
-        }
+}
 
-        .btn:hover {
+.btn:hover {
     background: #f0f0f0;
     transform: translateY(-3px);
-        }
-
-        
-        footer {
-            margin-top: 30px;
-            font-size: 0.85rem;
-            opacity: 0.85;
-        }
-    /* ===== Contact Section ===== */
-        html {
-    scroll-behavior: smooth;
 }
+
+/* ===== Contact Section ===== */
 .contact-section {
-    margin-top: 120px;
     padding: 80px 20px;
-    width: 100%;
-    text-align: center;
     background: rgba(255,255,255,0.05);
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 .contact-form {
@@ -175,35 +172,50 @@
     margin-top: 10px;
     font-size: 14px;
 }
-    </style>
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+</style>
 </head>
+
 <body>
-    <!-- 1. Navbar / Menu -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-        <a href="#contact">Contact US</a>    
-    </nav>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="#contact">Contact Us</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrapper">
     <div class="container">
         <h1>WELCOME TO</h1>
         <h2>Din's Library</h2>
 
         <p class="desc">
-           A digital library project designed to organized and
+           A digital library project designed to organize and
            showcase book collections.
         </p>
 
         <div class="badge">UNDER DEVELOPMENT</div>
 
-<div class="menu">
-    <a href="media.html" class="btn">🎵 Audio dan Video</a>
-    <a href="CV%20Dinar.html" class="btn">📄 My CV</a>
-    <a href="Social%20Media.html" class="btn">🌐 Social Media</a>
-</div>
+        <div class="menu">
+            <a href="media.html" class="btn">🎵 Audio dan Video</a>
+            <a href="CV%20Dinar.html" class="btn">📄 My CV</a>
+            <a href="Social%20Media.html" class="btn">🌐 Social Media</a>
+        </div>
+
         <footer>
             © 2026 Din's Library
         </footer>
     </div>
+</div>
+
+<!-- CONTACT -->
 <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
     <p>Kirim pesan atau pertanyaan kamu di bawah ini ✨</p>
@@ -216,7 +228,8 @@
         <p id="formMessage"></p>
     </form>
 </section>
-    <script>
+
+<script>
 document.getElementById("contactForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -227,23 +240,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     this.reset();
 });
 </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
