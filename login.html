@@ -109,6 +109,20 @@ transform:translateY(-2px);
 margin-top:10px;
 font-size:0.9rem;
 }
+
+.password-wrapper{
+position:relative;
+}
+
+.toggle-password{
+position:absolute;
+right:10px;
+top:50%;
+transform:translateY(-50%);
+cursor:pointer;
+font-size:14px;
+color:#333;
+}
 </style>
 </head>
 
@@ -132,8 +146,11 @@ font-size:0.9rem;
 <input type="email" id="loginEmail" required>
 
 <label>Password</label>
+<div class="password-wrapper">
 <input type="password" id="loginPassword" required>
-
+<span class="toggle-password" onclick="togglePassword('loginPassword')">👁</span>
+</div>
+  
 <button type="submit" class="submit-btn">Login</button>
 <p id="loginMessage" class="message"></p>
 </form>
@@ -166,10 +183,16 @@ font-size:0.9rem;
 <input type="date" id="birthdate" required>
 
 <label>Password</label>
+<div class="password-wrapper">
 <input type="password" id="signupPassword" required>
+<span class="toggle-password" onclick="togglePassword('signupPassword')">👁</span>
+</div>
 
 <label>Confirm Password</label>
+<div class="password-wrapper">
 <input type="password" id="confirmPassword" required>
+<span class="toggle-password" onclick="togglePassword('confirmPassword')">👁</span>
+</div>
 
 <button type="submit" class="submit-btn">Sign Up</button>
 <p id="signupMessage" class="message"></p>
@@ -265,6 +288,14 @@ message.style.color="red";
 message.textContent="Email atau password salah!";
 }
 });
+function togglePassword(id){
+const input = document.getElementById(id);
+if(input.type === "password"){
+input.type = "text";
+} else {
+input.type = "password";
+}
+}
 </script>
 
 </body>
