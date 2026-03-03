@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi - Litera Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>Litera Space</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="layanan.html">Layanan</a>
+            <a href="koleksi.html">Koleksi</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h2>Koleksi Buku</h2>
+        <p>Temukan berbagai buku fisik dan digital yang kami sediakan.</p>
+    </div>
+
+    <!-- GRID KOLEKSI -->
+    <section id="koleksi-grid">
+        <h3>Koleksi Unggulan</h3>
+        <div class="collection">
+            <div class="book-item" data-title="Buku A" data-author="Penulis A" data-desc="Deskripsi singkat Buku A.">
+                <img src="images/book-a.jpg" alt="Buku A" class="book-img">
+                <h4>Buku A</h4>
+                <p>Penulis A</p>
+            </div>
+            <div class="book-item" data-title="Buku B" data-author="Penulis B" data-desc="Deskripsi singkat Buku B.">
+                <img src="images/book-b.jpg" alt="Buku B" class="book-img">
+                <h4>Buku B</h4>
+                <p>Penulis B</p>
+            </div>
+            <div class="book-item" data-title="Buku C" data-author="Penulis C" data-desc="Deskripsi singkat Buku C.">
+                <img src="images/book-c.jpg" alt="Buku C" class="book-img">
+                <h4>Buku C</h4>
+                <p>Penulis C</p>
+            </div>
+            <div class="book-item" data-title="Buku D" data-author="Penulis D" data-desc="Deskripsi singkat Buku D.">
+                <img src="images/book-d.jpg" alt="Buku D" class="book-img">
+                <h4>Buku D</h4>
+                <p>Penulis D</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DETAIL BUKU -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h4 id="modalTitle"></h4>
+            <p id="modalAuthor"></p>
+            <p id="modalDesc"></p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Litera Space. All rights reserved.</p>
+        <p>
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
