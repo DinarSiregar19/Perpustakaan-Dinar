@@ -54,25 +54,51 @@ window.addEventListener("click", (e) => {
 });
 
 
-// Form Login
-document.getElementById("adminLoginForm").addEventListener("submit", function(e){
-    e.preventDefault();
+// Toggle Login/Register Form
+const loginBtn = document.getElementById("loginBtn");
+const registerBtn = document.getElementById("registerBtn");
+const loginFormSection = document.getElementById("login-form");
+const registerFormSection = document.getElementById("register-form");
 
+loginBtn.addEventListener("click", () => {
+    loginFormSection.classList.remove("hidden");
+    registerFormSection.classList.add("hidden");
+});
+
+registerBtn.addEventListener("click", () => {
+    registerFormSection.classList.remove("hidden");
+    loginFormSection.classList.add("hidden");
+});
+
+// Login Form
+document.getElementById("userLoginForm").addEventListener("submit", function(e){
+    e.preventDefault();
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
-
-    if(username === "" || password === ""){
-        alert("Mohon isi semua field terlebih dahulu.");
-        return;
-    }
-
-    // Dummy validation
-    if(username === "admin" && password === "123456"){
-        alert("Login berhasil! Selamat datang admin.");
-        // Redirect ke halaman admin (bisa diganti sesuai kebutuhan)
-        window.location.href = "admin.html";
+    if(username && password){
+        alert(`Login berhasil! Selamat datang ${username}.`);
+        this.reset();
     } else {
-        alert("Username atau password salah.");
+        alert("Mohon isi semua field.");
+    }
+});
+
+// Register Form
+document.getElementById("userRegisterForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const name = document.getElementById("regName").value.trim();
+    const email = document.getElementById("regEmail").value.trim();
+    const username = document.getElementById("regUsername").value.trim();
+    const password = document.getElementById("regPassword").value.trim();
+
+    if(name && email && username && password){
+        alert(`Registrasi berhasil! Selamat datang ${name}.`);
+        this.reset();
+        // Setelah register bisa langsung switch ke login
+        loginFormSection.classList.remove("hidden");
+        registerFormSection.classList.add("hidden");
+    } else {
+        alert("Mohon isi semua field.");
     }
 });
 
