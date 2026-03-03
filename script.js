@@ -54,7 +54,7 @@ window.addEventListener("click", (e) => {
 });
 
 
-// Toggle Login/Register Form
+// Toggle Login / Register Form
 const loginBtn = document.getElementById("loginBtn");
 const registerBtn = document.getElementById("registerBtn");
 const loginFormSection = document.getElementById("login-form");
@@ -70,7 +70,7 @@ registerBtn.addEventListener("click", () => {
     loginFormSection.classList.add("hidden");
 });
 
-// Login Form
+// Dummy Login
 document.getElementById("userLoginForm").addEventListener("submit", function(e){
     e.preventDefault();
     const username = document.getElementById("username").value.trim();
@@ -83,7 +83,7 @@ document.getElementById("userLoginForm").addEventListener("submit", function(e){
     }
 });
 
-// Register Form
+// Dummy Register
 document.getElementById("userRegisterForm").addEventListener("submit", function(e){
     e.preventDefault();
     const name = document.getElementById("regName").value.trim();
@@ -94,11 +94,10 @@ document.getElementById("userRegisterForm").addEventListener("submit", function(
     if(name && email && username && password){
         alert(`Registrasi berhasil! Selamat datang ${name}.`);
         this.reset();
-        // Setelah register bisa langsung switch ke login
+        // switch ke login setelah register
         loginFormSection.classList.remove("hidden");
         registerFormSection.classList.add("hidden");
     } else {
         alert("Mohon isi semua field.");
     }
 });
-
