@@ -326,3 +326,30 @@ footer a:hover {
     background:#357ABD;
 }
 
+/* Login/Register Menu */
+#login-menu {
+    text-align: center;
+    margin: 40px 0;
+}
+
+#login-menu .menu-buttons button {
+    padding: 12px 25px;
+    margin: 0 10px;
+    background: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+#login-menu .menu-buttons button:hover {
+    background: #357ABD;
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
