@@ -172,3 +172,51 @@ footer a:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+
+/* Contact Form Styling */
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact-form button {
+    padding: 12px 25px;
+    background: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#contact-form button:hover {
+    background: #357ABD;
+}
+
+#info-contact {
+    text-align: center;
+    margin-top: 50px;
+}
