@@ -6,42 +6,8 @@
     <title>Litera Space - Perpustakaan Umum</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Reset & Font */
-        * {margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif;}
-        body {background-color: #EAF4FF; color: #2C3E50; line-height:1.6;}
-
-        /* Header */
-        header {background:#4A90E2; color:white; padding:15px 50px; display:flex; justify-content:space-between; align-items:center;}
-        header h1 {font-size:1.5rem;}
-        nav a {color:white; text-decoration:none; margin-left:25px; font-weight:500;}
-        nav a:hover {text-decoration:underline;}
-
-        /* Hero */
-        .hero {text-align:center; padding:80px 20px; background:#EAF4FF;}
-        .hero h2 {font-size:2rem; margin-bottom:20px;}
-        .search-bar {max-width:500px; margin:0 auto;}
-        .search-bar input[type="text"] {width:80%; padding:12px 15px; border:1px solid #ccc; border-radius:5px;}
-        .search-bar button {padding:12px 20px; border:none; background:#4A90E2; color:white; border-radius:5px; cursor:pointer;}
-        .search-bar button:hover {background:#357ABD;}
-
-        /* Sections */
-        section {padding:60px 50px;}
-        section h3 {font-size:1.8rem; margin-bottom:25px; text-align:center;}
-
-        /* Layanan */
-        .services {display:flex; justify-content:space-around; flex-wrap:wrap;}
-        .service-item {background:white; padding:20px; margin:15px; border-radius:10px; width:220px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:center;}
-
-        /* Koleksi */
-        .collection {display:flex; justify-content:space-around; flex-wrap:wrap;}
-        .book-item {background:white; padding:15px; margin:15px; border-radius:10px; width:180px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:center;}
-
-        /* Footer */
-        footer {background:#2C3E50; color:white; text-align:center; padding:25px;}
-        footer a {color:white; text-decoration:none; margin:0 10px;}
-        footer a:hover {text-decoration:underline;}
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- HEADER -->
@@ -62,9 +28,10 @@
         <h2>Selamat Datang di Litera Space</h2>
         <p>Temukan buku favoritmu hari ini</p>
         <div class="search-bar">
-            <input type="text" placeholder="Cari judul, penulis, atau ISBN...">
-            <button>Cari</button>
+            <input type="text" id="searchInput" placeholder="Cari judul, penulis, atau ISBN...">
+            <button id="searchBtn">Cari</button>
         </div>
+        <div id="searchResults"></div>
     </div>
 
     <!-- LAYANAN -->
@@ -128,5 +95,9 @@
             <a href="#">Twitter</a>
         </p>
     </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
 </body>
 </html>
+
