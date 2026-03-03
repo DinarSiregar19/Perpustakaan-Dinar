@@ -1,38 +1,162 @@
 /* Reset & Font */
-* {margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif;}
-body {background-color: #EAF4FF; color: #2C3E50; line-height:1.6;}
+* {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #EAF4FF; 
+  color: #2C3E50; 
+  line-height: 1.6;
+}
 
 /* HEADER */
-header {background:#4A90E2; color:white; padding:15px 50px; display:flex; justify-content:space-between; align-items:center;}
-header h1 {font-size:1.5rem;}
-nav a {color:white; text-decoration:none; margin-left:25px; font-weight:500;}
-nav a:hover {text-decoration:underline;}
+header {
+  background:#4A90E2; 
+  color: white; 
+  padding: 15px 50px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+nav a {
+  color: white; 
+  text-decoration: none; 
+  margin-left: 25px; 
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
 
 /* HERO */
-.hero {text-align:center; padding:80px 20px; background:#EAF4FF;}
-.hero h2 {font-size:2rem; margin-bottom:20px;}
-.hero p {margin-bottom:30px; font-size:1.1rem;}
-.search-bar {max-width:500px; margin:0 auto; display:flex; justify-content:center; gap:10px;}
-.search-bar input[type="text"] {flex:1; padding:12px 15px; border:1px solid #ccc; border-radius:5px;}
-.search-bar button {padding:12px 20px; border:none; background:#4A90E2; color:white; border-radius:5px; cursor:pointer;}
-.search-bar button:hover {background:#357ABD;}
-#searchResults {margin-top:15px; color:#333; font-style:italic;}
+.hero {
+  text-align: center; 
+  padding: 80px 20px; 
+  background: #EAF4FF;
+}
+
+.hero h2 {
+  font-size: 2rem; 
+  margin-bottom: 20px;
+}
+
+.hero p {
+  margin-bottom: 30px; 
+  font-size: 1.1rem;
+}
+
+.search-bar {
+  max-width: 500px; 
+  margin: 0 auto; 
+  display: flex; 
+  justify-content: center; 
+  gap:10px;
+}
+
+.search-bar input[type="text"] {
+  flex: 1; 
+  padding: 12px 15px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 12px 20px; 
+  border: none; 
+  background: #4A90E2; 
+  color: white; 
+  border-radius: 5px; 
+  cursor:pointer;
+}
+
+.search-bar button:hover {
+  background: #357ABD;
+}
+
+#searchResults {
+  margin-top: 15px; 
+  color: #333; 
+  font-style: italic;
+}
 
 /* Sections */
-section {padding:60px 50px;}
-section h3 {font-size:1.8rem; margin-bottom:25px; text-align:center;}
+section {
+  padding: 60px 50px;
+}
+
+section h3 {
+  font-size: 1.8rem; 
+  margin-bottom: 25px; 
+  text-align:center;
+}
 
 /* Layanan */
-.services {display:flex; justify-content:space-around; flex-wrap:wrap;}
-.service-item {background:white; padding:20px; margin:15px; border-radius:10px; width:220px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s;}
-.service-item:hover {transform: translateY(-5px);}
+.services {
+  display: flex; 
+  justify-content: space-around; 
+  flex-wrap: wrap;
+}
+
+.service-item {
+  background: white; 
+  padding: 20px; 
+  margin: 15px; 
+  border-radius: 10px; 
+  width: 220px; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+  text-align: center; 
+  transition: transform 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
 
 /* Koleksi */
-.collection {display:flex; justify-content:space-around; flex-wrap:wrap;}
-.book-item {background:white; padding:15px; margin:15px; border-radius:10px; width:180px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s;}
-.book-item:hover {transform: translateY(-5px);}
+.collection {
+  display: flex; 
+  justify-content: space-around; 
+  flex-wrap: wrap;
+}
+
+.book-item {
+  background: white; 
+  padding: 15px; 
+  margin: 15px; 
+  border-radius: 10px; 
+  width: 180px; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+  text-align: center; 
+  transition: transform 0.3s;
+}
+
+.book-item:hover {
+  transform: translateY(-5px);
+}
 
 /* Footer */
-footer {background:#2C3E50; color:white; text-align:center; padding:25px;}
-footer a {color:white; text-decoration:none; margin:0 10px;}
-footer a:hover {text-decoration:underline;}
+footer {
+  background: #2C3E50; 
+  color: white; 
+  text-align: center; 
+  padding: 25px;
+}
+
+footer a {
+  color: white; 
+  text-decoration: none; 
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
