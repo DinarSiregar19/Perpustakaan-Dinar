@@ -26,3 +26,31 @@ document.getElementById("contactUsForm").addEventListener("submit", function(e) 
         alert("Mohon isi semua field terlebih dahulu.");
     }
 });
+
+// Modal Buku
+const modal = document.getElementById("bookModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalAuthor = document.getElementById("modalAuthor");
+const modalDesc = document.getElementById("modalDesc");
+const closeBtn = document.querySelector(".modal .close");
+
+document.querySelectorAll(".book-item").forEach(item => {
+    item.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalTitle.textContent = item.dataset.title;
+        modalAuthor.textContent = item.dataset.author;
+        modalDesc.textContent = item.dataset.desc;
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+    if(e.target === modal){
+        modal.style.display = "none";
+    }
+});
+
+
