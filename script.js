@@ -54,3 +54,25 @@ window.addEventListener("click", (e) => {
 });
 
 
+// Form Login
+document.getElementById("adminLoginForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if(username === "" || password === ""){
+        alert("Mohon isi semua field terlebih dahulu.");
+        return;
+    }
+
+    // Dummy validation
+    if(username === "admin" && password === "123456"){
+        alert("Login berhasil! Selamat datang admin.");
+        // Redirect ke halaman admin (bisa diganti sesuai kebutuhan)
+        window.location.href = "admin.html";
+    } else {
+        alert("Username atau password salah.");
+    }
+});
+
