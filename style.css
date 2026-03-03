@@ -1,173 +1,38 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Reset & Font */
+* {margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif;}
+body {background-color: #EAF4FF; color: #2C3E50; line-height:1.6;}
 
-html {
-    scroll-behavior: smooth;
-}
+/* HEADER */
+header {background:#4A90E2; color:white; padding:15px 50px; display:flex; justify-content:space-between; align-items:center;}
+header h1 {font-size:1.5rem;}
+nav a {color:white; text-decoration:none; margin-left:25px; font-weight:500;}
+nav a:hover {text-decoration:underline;}
 
-body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #f5f5f5;
-    text-align: center;
-}
+/* HERO */
+.hero {text-align:center; padding:80px 20px; background:#EAF4FF;}
+.hero h2 {font-size:2rem; margin-bottom:20px;}
+.hero p {margin-bottom:30px; font-size:1.1rem;}
+.search-bar {max-width:500px; margin:0 auto; display:flex; justify-content:center; gap:10px;}
+.search-bar input[type="text"] {flex:1; padding:12px 15px; border:1px solid #ccc; border-radius:5px;}
+.search-bar button {padding:12px 20px; border:none; background:#4A90E2; color:white; border-radius:5px; cursor:pointer;}
+.search-bar button:hover {background:#357ABD;}
+#searchResults {margin-top:15px; color:#333; font-style:italic;}
 
-/* ===== Navbar ===== */
-nav {
-    width: 100%;
-    background-color: #2c3e50;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-}
+/* Sections */
+section {padding:60px 50px;}
+section h3 {font-size:1.8rem; margin-bottom:25px; text-align:center;}
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: bold;
-}
+/* Layanan */
+.services {display:flex; justify-content:space-around; flex-wrap:wrap;}
+.service-item {background:white; padding:20px; margin:15px; border-radius:10px; width:220px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s;}
+.service-item:hover {transform: translateY(-5px);}
 
-nav a:hover {
-    color: #ffdd57;
-}
+/* Koleksi */
+.collection {display:flex; justify-content:space-around; flex-wrap:wrap;}
+.book-item {background:white; padding:15px; margin:15px; border-radius:10px; width:180px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s;}
+.book-item:hover {transform: translateY(-5px);}
 
-/* ===== Hero Section ===== */
-.hero-wrapper {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 80px;
-}
-
-.container {
-    padding: 35px;
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
-
-h1 {
-    font-size: 3rem;
-    letter-spacing: 5px;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-weight: normal;
-    font-size: 1.4rem;
-    margin-bottom: 25px;
-}
-
-.desc {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-.badge {
-    display: inline-block;
-    padding: 8px 22px;
-    border: 2px solid #f5f5f5;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    margin-bottom: 25px;
-}
-
-.menu {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 24px;
-    background: #ffffff;
-    color: #203a43;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 500;
-    transition: 0.3s ease;
-}
-
-.btn:hover {
-    background: #f0f0f0;
-    transform: translateY(-3px);
-}
-
-/* ===== Contact Section ===== */
-.contact-section {
-    padding: 80px 20px;
-    background: rgba(255,255,255,0.05);
-}
-
-.contact-section h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.contact-form {
-    max-width: 400px;
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    box-shadow: 0 0 10px rgba(255,255,255,0.4);
-}
-
-/* ===== Animated Button ===== */
-.send-btn {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: #2c3e50;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.send-btn:hover {
-    background: #34495e;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-}
-
-.send-btn:active {
-    transform: scale(0.95);
-}
-
-#formMessage {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    font-size: 0.85rem;
-    opacity: 0.85;
-}
+/* Footer */
+footer {background:#2C3E50; color:white; text-align:center; padding:25px;}
+footer a {color:white; text-decoration:none; margin:0 10px;}
+footer a:hover {text-decoration:underline;}
