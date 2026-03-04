@@ -284,12 +284,12 @@ footer a:hover {
 }
 
 /* Menu Login / Daftar */
-#login-menu {
+.login-menu {
     text-align: center;
     margin: 40px 0;
 }
 
-#login-menu .menu-buttons button {
+.login-menu, .menu-buttons button {
     padding: 12px 25px;
     margin: 0 10px;
     background: #4A90E2;
@@ -301,7 +301,7 @@ footer a:hover {
     transition: background 0.3s;
 }
 
-#login-menu .menu-buttons button:hover {
+.login-menu, .menu-buttons button:hover {
     background: #357ABD;
 }
 
@@ -311,7 +311,7 @@ footer a:hover {
 }
 
 /* Form Login / Register */
-#login-form, #register-form {
+.login-form, .register-form {
     max-width: 400px;
     margin: 20px auto 50px auto;
     padding: 30px 20px;
