@@ -54,41 +54,50 @@ window.addEventListener("click", (e) => {
 });
 
 
-// Login
+// Toggle Login / Register Form
+const loginBtn = document.getElementById("loginBtn");
+const registerBtn = document.getElementById("registerBtn");
+const loginFormSection = document.getElementById("login-form");
+const registerFormSection = document.getElementById("register-form");
 
-let switchFrm = document.querySelector('switch-frm')
-let switchF1 = document.querySelector('#switch-f1')
-let switchF2 = document.querySelector('#switch-f2')
-let switchCircle = document.querySelectorAll('.switch-circle')
-let switchBtn = document.querySelectorAll('.switch-btn')
-let regFrm = document.querySelector('#register-form')
-let logFrm - document.querySelector('#login-form')
-let allButtons = document.querySelectorALl('.submit')
+loginBtn.addEventListener("click", () => {
+    loginFormSection.classList.remove("hidden");
+    registerFormSection.classList.add("hidden");
+});
 
-let getButtons = (e) => e.preventDefault()
+registerBtn.addEventListener("click", () => {
+    registerFormSection.classList.remove("hidden");
+    loginFormSection.classList.add("hidden");
+});
 
-let changeForm = (e) =>{
-    switchFrm.classList.add('is-gx')
-    setTimeout(function () {
-        switchFrm.classList.remove('is-gx')
-    }, 1500)
+// Dummy Login
+document.getElementById("userLoginForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    if(username && password){
+        alert(`Login berhasil! Selamat datang ${username}.`);
+        this.reset();
+    } else {
+        alert("Mohon isi semua field.");
+    }
+});
 
-    switchFrm.classList.toggle('is-txr')
-    switchCircle[0].classList.toggle('is-txr')
-    switchCircle[1].classList.toggle('is-txr')
+// Dummy Register
+document.getElementById("userRegisterForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const name = document.getElementById("regName").value.trim();
+    const email = document.getElementById("regEmail").value.trim();
+    const username = document.getElementById("regUsername").value.trim();
+    const password = document.getElementById("regPassword").value.trim();
 
-    switchF1.classList.toggle('is-hidden')
-    switchF2.classList.toggle('is-hidden')
-    regFrm.classList.toggle('is-txl')
-    logFrm.classList.toggle('is-txl')
-    logFrm.classList.toggle('is=z200')
-}
-
-let mainF = (e) =>{
-    for(var i = 0, i < allButtons.length; i++)
-        allButtons[i].addEventListener('click', getButtons)
-    for(var i = 0; i < switchBtn.length; i++)
-        switchBtn[i].addEventListener('click', changeForm)
-}
-
-window.addEventListener('load', mainF)
+    if(name && email && username && password){
+        alert(`Registrasi berhasil! Selamat datang ${name}.`);
+        this.reset();
+        // switch ke login setelah register
+        loginFormSection.classList.remove("hidden");
+        registerFormSection.classList.add("hidden");
+    } else {
+        alert("Mohon isi semua field.");
+    }
+});
