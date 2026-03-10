@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Litera Space</title>
+    <title>Forum Diskusi Perpustakaan</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,14 +21,171 @@
         </nav>
     </header>
 
-    <!-- HERO -->
-    <div class="hero">
-        <h2>Hubungi Kami</h2>
-        <p>Kami siap membantu pertanyaan, saran, atau informasi terkait layanan perpustakaan.</p>
-    </div>
-
     <!-- FORUM -->
+<section class="forum-section">
 
+        <h2>Forum Diskusi Perpustakaan</h2>
+
+        <!-- FILTER DAN KATEGORI -->
+
+        <div class="forum-controls">
+
+            <select id="filterKategori">
+                <option value="semua">Semua Kategori</option>
+                <option value="buku">Diskusi Buku</option>
+                <option value="rekomendasi">Rekomendasi Buku</option>
+                <option value="layanan">Tanya Pustakawan</option>
+                <option value="event">Event Literasi</option>
+            </select>
+
+            <input type="text" id="searchDiskusi" placeholder="Cari diskusi...">
+
+        </div>
+
+
+        <!-- FORM POST DISKUSI -->
+
+        <div class="forum-form">
+
+            <input type="text" id="namaUser" placeholder="Nama Anda">
+
+                <select id="kategoriDiskusi">
+                    <option value="">Pilih Kategori</option>
+                    <option value="buku">Diskusi Buku</option>
+                    <option value="rekomendasi">Rekomendasi Buku</option>
+                    <option value="layanan">Tanya Pustakawan</option>
+                    <option value="event">Event Literasi</option>
+                </select>
+
+            <textarea id="isiDiskusi" placeholder="Tulis pertanyaan atau diskusi"></textarea>
+
+                <button id="btnKirimDiskusi">Kirim Diskusi</button>
+
+        </div>
+
+
+        <!-- LIST DISKUSI -->
+
+        <div class="forum-post-list">
+
+
+        <!-- POSTINGAN -->
+
+        <div class="forum-post" data-kategori="buku">
+
+            <div class="post-header">
+
+                <span class="post-nama">Andi</span>
+                <span class="post-kategori">Diskusi Buku</span>
+                <span class="post-waktu">10 Maret 2026</span>
+        
+            </div>
+
+
+            <div class="post-isi">
+            Apakah ada rekomendasi buku sejarah Indonesia yang mudah dipahami?
+            </div>
+
+
+            <!-- AKSI POST -->
+
+            <div class="post-actions">
+
+                <button class="btn-like">👍 <span class="like-count">3</span></button>
+
+                <button class="btn-reply">Balas</button>
+
+            </div>
+
+
+       <!-- REPLY SECTION -->
+
+        <div class="reply-section">
+
+
+            <!-- REPLY FORM -->
+
+            <div class="reply-form">
+
+                <input type="text" class="reply-nama" placeholder="Nama Anda">
+
+                <textarea class="reply-isi" placeholder="Tulis balasan"></textarea>
+
+                <button class="btn-kirim-reply">Kirim</button>
+
+                </div>
+
+
+                <!-- LIST REPLY -->
+
+                <div class="reply-list">
+
+                    <div class="reply-item">
+
+                    <span class="reply-nama-user">Pustakawan</span>
+
+                        <div class="reply-text">
+                        Anda bisa mencoba buku "Sejarah Indonesia Modern".
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- POSTINGAN LAIN -->
+
+        <div class="forum-post" data-kategori="rekomendasi">
+
+            <div class="post-header">
+
+                <span class="post-nama">Sari</span>
+                <span class="post-kategori">Rekomendasi Buku</span>
+                <span class="post-waktu">9 Maret 2026</span>
+
+            </div>
+
+            <div class="post-isi">
+            Saya mencari rekomendasi novel yang ringan untuk dibaca.
+            </div>
+
+            <div class="post-actions">
+
+                <button class="btn-like">👍 <span class="like-count">5</span></button>
+
+                <button class="btn-reply">Balas</button>
+
+            </div>
+
+                <div class="reply-section">
+
+                    <div class="reply-list">
+
+                        <div class="reply-item">
+
+                            <span class="reply-nama-user">Budi</span>
+
+                            <div class="reply-text">
+                            Coba baca novel "Laut Bercerita".
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+    
     <!-- INFORMASI -->
     <section id="info-contact">
         <h3>Informasi Lainnya</h3>
