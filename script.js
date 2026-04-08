@@ -101,3 +101,12 @@ document.getElementById("userRegisterForm").addEventListener("submit", function(
         alert("Mohon isi semua field.");
     }
 });
+
+/*search*/
+    function searchPage() {
+        const keyword = document.getElementById("searchInput").value.trim();
+
+    if (keyword !== ""){
+        window.find(keyword);
+    }
+}
